@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "Name": "AI Usage Limits",
+  "Version": "1.1.0.0",
+  "Author": "Llewellyn van Zyl",
+  "Description": "Shows Claude Code usage limits on keys and the Stream Deck+ touch strip, read from the Claude Code sign-in on this computer.",
+  "UUID": "com.psynalytics.claude-usage",
+  "Icon": "imgs/plugin-icon",
+  "Category": "Psynalytics",
+  "CategoryIcon": "imgs/category-icon",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Nodejs": {
+    "Version": "20"
+  },
+  "Actions": [
+    {
+      "Name": "Usage",
+      "UUID": "com.psynalytics.claude-usage.view",
+      "Icon": "imgs/action-icon",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "Encoder": {
+        "layout": "layouts/usage-slot.json",
+        "Icon": "imgs/dial-icon",
+        "TriggerDescription": {
+          "Rotate": "Change view",
+          "Push": "Refresh now",
+          "Touch": "Refresh now",
+          "LongTouch": "Open the usage page"
+        }
+      },
+      "States": [
+        {
+          "Image": "imgs/key-default"
+        }
+      ],
+      "PropertyInspectorPath": "ui/usage.html",
+      "UserTitleEnabled": false
+    }
+  ]
+}

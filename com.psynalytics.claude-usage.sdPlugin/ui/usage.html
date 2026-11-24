@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="libs/sdpi-components.js"></script>
+</head>
+<body>
+  <sdpi-item label="View">
+    <sdpi-select setting="view" default="week">
+      <option value="week">Week</option>
+      <option value="model">Model week</option>
+      <option value="burn">Burn per hour</option>
+      <option value="runsout">Runs out</option>
+      <option value="today">Today</option>
+      <option value="session">Session</option>
+    </sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Chart">
+    <sdpi-select setting="chart" default="bar">
+      <option value="bar">Bar</option>
+      <option value="ring">Ring</option>
+      <option value="soft">Soft chart</option>
+      <option value="arc">Arc</option>
+      <option value="blocks">Blocks</option>
+      <option value="columns">Day columns</option>
+    </sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Background">
+    <sdpi-color setting="ground" default="#12142d"></sdpi-color>
+  </sdpi-item>
+  <sdpi-item label="Bar">
+    <sdpi-color setting="bar" default="#008da1"></sdpi-color>
+  </sdpi-item>
+  <sdpi-item label="Text">
+    <sdpi-color setting="text" default="#ffffff"></sdpi-color>
+  </sdpi-item>
+  <sdpi-item>
+    <sdpi-button id="reset-colours">Reset colours to default</sdpi-button>
+  </sdpi-item>
+  <sdpi-item label="Amber at">
+    <sdpi-range setting="amberAt" default="75" min="0" max="100" step="1" showlabels></sdpi-range>
+  </sdpi-item>
+  <sdpi-item label="Red at">
+    <sdpi-range setting="redAt" default="90" min="0" max="100" step="1" showlabels></sdpi-range>
+  </sdpi-item>
+  <sdpi-item label="Auto-rotate">
+    <sdpi-checkbox setting="rotate"></sdpi-checkbox>
+  </sdpi-item>
+  <sdpi-item label="Seconds">
+    <sdpi-range setting="rotateSeconds" default="10" min="3" max="120" step="1" showlabels></sdpi-range>
+  </sdpi-item>
+  <script>
+    document.getElementById("reset-colours").addEventListener("click", () => SDPIComponents.streamDeckClient.send("sendToPlugin", { event: "resetColours" }));
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "com.psynalytics.claude-usage",
+  "version": "1.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@elgato/streamdeck": "^2.1.2"
+  }
+}

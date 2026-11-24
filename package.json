@@ -1,0 +1,15 @@
+{
+  "name": "stream-deck-ai-usage-limits",
+  "description": "Stream Deck plugin that shows your Claude Code usage limits on keys and the Stream Deck+ touch strip.",
+  "license": "MIT",
+  "author": "Llewellyn van Zyl",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llewellynvz/stream-deck-ai-usage-limits.git"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/"
+  }
+}
